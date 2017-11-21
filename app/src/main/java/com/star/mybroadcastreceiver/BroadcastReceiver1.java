@@ -13,7 +13,15 @@ public class BroadcastReceiver1 extends BroadcastReceiver {
     @Override  // 收廣播
     public void onReceive(Context context, Intent intent) {
         String event = intent.getAction();
-        Toast.makeText(context ,event ,Toast.LENGTH_SHORT ).show();
+
+        if (event.equals("demo.com.intent.action.CUSTOM_BROADCAST"))
+        {
+            Toast.makeText(context ," BR1 : 收到自訂廣播" ,Toast.LENGTH_SHORT ).show();
+        }
+        else
+        {
+            Toast.makeText(context ,"BR1 : " + event ,Toast.LENGTH_SHORT ).show();
+        }
 
     }
 }
